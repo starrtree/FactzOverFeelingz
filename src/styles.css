@@ -2,17 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  background: #000;
-}
+:root { color-scheme: dark; }
+body { margin: 0; background: #000; font-family: 'Arial Black', Impact, sans-serif; }
 
-.feelingz-mode * {
-  transition: transform .18s ease;
-}
+.street-grain { background-image: radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px); background-size: 3px 3px; opacity: .2; }
+.distressed { text-shadow: 0 2px 0 #111, 0 4px 12px rgba(0,0,0,.6); letter-spacing: .02em; }
+.hero-left { background: linear-gradient(160deg, rgba(32,70,34,.45), rgba(6,6,6,.95) 55%), repeating-linear-gradient(135deg, rgba(255,255,255,.03) 0 2px, transparent 2px 6px); border-right: 1px solid #242424; }
+.hero-right { background: linear-gradient(140deg, rgba(63,63,63,.55), rgba(8,8,8,.95) 52%), repeating-linear-gradient(45deg, rgba(255,255,255,.02) 0 1px, transparent 1px 7px); }
 
-.feelingz-mode button:hover,
-.feelingz-mode article:hover,
-.feelingz-mode a:hover {
-  transform: rotate(-1.5deg) scale(1.02) translateY(-2px);
+.btn-red, .btn-outline { text-transform: uppercase; letter-spacing: .08em; font-weight: 800; padding: .85rem 1.2rem; transition: all .2s ease; }
+.btn-red { background: #b91212; border: 1px solid #d12222; }
+.btn-red:hover { transform: translateY(-1px); box-shadow: 0 0 20px rgba(185,18,18,.6); }
+.btn-outline { border: 1px solid #fff; }
+.btn-outline:hover { box-shadow: inset 0 0 0 1px #fff; }
+.btn-red.small, .btn-outline.small { padding: .55rem .8rem; font-size: .75rem; }
+
+.choice-react, .choice-remain { padding: 1.4rem; border: 1px solid #444; background: #090909; }
+.choice-react { border-color: #7e1111; }
+
+.mode-feelingz main, .mode-feelingz section, .mode-feelingz article, .mode-feelingz button:hover { animation: sway .4s ease-in-out infinite alternate; }
+@keyframes sway { from { transform: translateX(-1px) rotate(-0.3deg); } to { transform: translateX(1px) rotate(0.3deg) skewX(.25deg); } }
+
+.mode-factz button:hover { background-image: linear-gradient(110deg, transparent 35%, rgba(255,255,255,.3) 50%, transparent 62%); background-size: 200% 100%; background-position: 100% 0; }
+
+@media (max-width: 767px) {
+  .distressed { font-size: 3.3rem; }
 }
