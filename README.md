@@ -1,20 +1,15 @@
 # Factz Over Feelingz storefront
 
-## Why GitHub may show old timestamps
-If the repo front page still says "7 hours ago," the new commits likely have **not been pushed/merged to `main` yet**.
+## Blank white screen fix
+If the website showed only a white screen, the most likely cause was a failed GitHub Pages build pipeline.
 
-Check these in GitHub:
-1. **Branch selector**: confirm you're on `main`.
-2. **Pull Requests tab**: confirm a newer PR exists and is merged.
-3. **Commits tab**: verify latest commit hash exists on `main`.
+This repo now deploys from GitHub Actions using `npm install` (not `npm ci`), because there is currently no committed lockfile. That prevents Pages from failing at install time.
 
-## Pages deployment
-This repo now includes `.github/workflows/deploy-pages.yml` to auto-build and deploy on every push to `main`.
-
-### Required one-time repo settings
+## Required repo settings
 1. Go to **Settings → Pages**.
-2. Under **Build and deployment**, set **Source = GitHub Actions**.
-3. Ensure `main` branch receives merged commits.
+2. Set **Build and deployment → Source = GitHub Actions**.
+3. Merge/push changes into `main` to trigger deploy.
+4. Check **Actions** tab for the latest run status.
 
 ## Local run
 ```bash
