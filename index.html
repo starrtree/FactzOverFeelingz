@@ -4,9 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Factz Over Feelingz</title>
+    <style>
+      html, body { margin: 0; background: #000; color: #fff; font-family: Arial, sans-serif; }
+      #boot-fallback { min-height: 100vh; display: grid; place-items: center; padding: 24px; text-align: center; }
+      #boot-fallback .box { max-width: 680px; }
+    </style>
   </head>
-  <body class="bg-black">
+  <body>
+    <div id="boot-fallback">
+      <div class="box">
+        <h1>Factz Over Feelingz</h1>
+        <p>If this screen stays visible, the JS bundle did not load from GitHub Pages.</p>
+        <p>Verify the repo URL/path and that the latest Actions deploy to <b>main</b> succeeded.</p>
+      </div>
+    </div>
     <div id="root"></div>
+    <noscript>
+      <div id="boot-fallback"><div class="box">This site needs JavaScript enabled.</div></div>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
